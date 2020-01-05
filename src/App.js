@@ -1,24 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+// import axios from 'axios';
+import NoobContextProvider from './contexts/Noob/NoobState';
+import Noobs from './components/Noob/Noobs';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NoobContextProvider>
+          <h1 className="orange-text">The Noob Lists using Context</h1>
+          <Noobs />
+        </NoobContextProvider>
     </div>
   );
 }
